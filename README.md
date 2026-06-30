@@ -20,6 +20,45 @@
 
 当前真正的高保真 React 原型位于 `apps/glimmer-reader-prototype`。后续页面 UI 修改、高保真交互调整和作品集演示截图，均以这个目录为准。
 
+## Prototype Preview
+
+<p align="center">
+  <img src="portfolio/assets/screenshots/home.png" alt="Home screen" width="160" />
+  <img src="portfolio/assets/screenshots/atmosphere-settings.png" alt="Atmosphere settings screen" width="160" />
+  <img src="portfolio/assets/screenshots/reading-session.png" alt="Reading session screen" width="160" />
+  <img src="portfolio/assets/screenshots/reading-assist.png" alt="Reading assist popup" width="160" />
+  <img src="portfolio/assets/screenshots/daily-summary.png" alt="Daily summary screen" width="160" />
+</p>
+
+<p align="center">
+  <sub>Home · Atmosphere Settings · Reading Session · Reading Assist · Daily Summary</sub>
+</p>
+
+## Core User Flow
+
+```mermaid
+flowchart TD
+  A[首页：今天先读 5 分钟] --> B[氛围设置：选择陪伴角色与白噪音]
+  B --> C[进入阅读]
+  C --> D{阅读中是否卡住}
+  D -- 否 --> E[继续阅读]
+  D -- 是 --> F[主动打开阅读辅助]
+  F --> G[直接问或基于原文回答]
+  G --> E
+  E --> H[主动结束阅读]
+  H --> I{是否满足总结条件}
+  I -- 否 --> C
+  I -- 是 --> J[确认阅读范围]
+  J --> K[主动生成 AI 今日总结]
+  K --> L[查看总结]
+  L --> M{是否继续复盘}
+  M -- 否 --> N[奖励结算]
+  M -- 是 --> O[三道问题]
+  O --> P[反馈与奖励]
+  P --> Q[记录页沉淀]
+  N --> Q
+```
+
 下一步推进顺序：
 
 1. 以 `apps/glimmer-reader-prototype` 的 React 原型为当前高保真实现基准，继续打磨首页、书架、阅读氛围、沉浸阅读、阅读总结、三道问题、反馈、奖励结算和行动复盘等核心链路。
@@ -103,6 +142,8 @@ Demo 阶段不追求大样本增长数据，重点验证用户是否能理解并
 │   └── glimmer-reader-prototype/
 │       └── README.md
 └── portfolio/
+    ├── assets/
+    │   └── screenshots/
     ├── 01-one-page-overview.md
     ├── 02-ai-product-case.md
     ├── 03-prd-summary-for-interview.md
