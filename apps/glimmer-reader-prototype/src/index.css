@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "PingFang SC", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: var(--app-primary);
+  --color-primary-container: var(--app-primary-container);
+  --color-on-primary: var(--app-on-primary);
+  --color-background: var(--app-background);
+  --color-surface: var(--app-surface);
+  --color-surface-card: var(--app-surface-card);
+  --color-surface-variant: var(--app-surface-variant);
+  --color-text-secondary: var(--app-text-secondary);
+  --color-border-light: var(--app-border-light);
+  --color-accent-blue-tint: var(--app-accent-blue-tint);
+  --color-tertiary-fixed: var(--app-tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--app-tertiary-fixed-dim);
+  --color-surface-container-lowest: var(--app-surface-container-lowest);
+  --color-on-surface: var(--app-on-surface);
+  --color-on-surface-variant: var(--app-on-surface-variant);
+  --color-outline-variant: var(--app-outline-variant);
+  --color-tertiary-container: var(--app-tertiary-container);
+}
+
+:root {
+  --app-primary: #17262e;
+  --app-primary-container: #2d3c44;
+  --app-on-primary: #ffffff;
+  --app-background: #f8fafa;
+  --app-surface: #f8fafa;
+  --app-surface-card: #ffffff;
+  --app-surface-variant: #e1e3e3;
+  --app-text-secondary: #87959A;
+  --app-border-light: #DDEFF7;
+  --app-accent-blue-tint: #EAF6FC;
+  --app-tertiary-fixed: #ffdea7;
+  --app-tertiary-fixed-dim: #eebf6a;
+  --app-surface-container-lowest: #ffffff;
+  --app-on-surface: #191c1d;
+  --app-on-surface-variant: #43474a;
+  --app-outline-variant: #c3c7ca;
+  --app-tertiary-container: #4e3600;
+}
+
+.dark {
+  --app-primary: #e2e8f0;
+  --app-primary-container: #334155;
+  --app-on-primary: #0f172a;
+  --app-background: #0b1120;
+  --app-surface: #0f172a;
+  --app-surface-card: #1e293b;
+  --app-surface-variant: #334155;
+  --app-text-secondary: #94a3b8;
+  --app-border-light: #334155;
+  --app-accent-blue-tint: #0f172a;
+  --app-tertiary-fixed: #b08d48;
+  --app-tertiary-fixed-dim: #8b6b28;
+  --app-surface-container-lowest: #020617;
+  --app-on-surface: #f1f5f9;
+  --app-on-surface-variant: #cbd5e1;
+  --app-outline-variant: #475569;
+  --app-tertiary-container: #d4a350;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--app-outline-variant);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--app-text-secondary);
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-outline-variant) transparent;
+}
+
+body {
+  background-color: #1a1a1a;
+}

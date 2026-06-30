@@ -1,0 +1,43 @@
+{
+  "name": "glimmer-reader-prototype",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3002 --strictPort",
+    "dev:vite": "vite --host 127.0.0.1 --port 3002 --strictPort",
+    "dev:external-test": "tsx server/startExternalTestServer.ts",
+    "dev:3000": "vite --host 127.0.0.1 --port 3000 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist server.js",
+    "lint": "tsc --noEmit",
+    "test": "node --import tsx --test server/aiIntegration.test.ts server/aiEndpoints.test.ts server/devStartup.test.ts server/externalTestServer.test.ts server/ai/aiInfrastructure.test.ts server/ai/liveAcceptance.test.ts src/ai/aiRequestState.test.ts src/api/aiRequestClient.test.ts src/summary/pendingSummary.test.ts src/rewards/rewardSettlement.test.ts",
+    "test:live-ai": "node --import tsx scripts/run-live-ai-acceptance.ts",
+    "test:ai-quality": "node --import tsx scripts/run-ai-quality-evaluation.ts",
+    "dev:start": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-glimmer-dev.ps1",
+    "dev:install-autostart": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-dev-autostart.ps1"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "lucide-react": "^0.546.0",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1",
+    "vite": "^6.2.3",
+    "express": "^4.21.2",
+    "dotenv": "^17.2.3",
+    "motion": "^12.23.24"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3",
+    "@types/express": "^4.17.21"
+  }
+}

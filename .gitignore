@@ -1,0 +1,22 @@
+# Local secrets and environment files
+.env*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build and test output
+dist/
+build/
+coverage/
+tmp/
+output/
+.playwright-cli/
+.antigravity/
+out.js
+
+# Logs and OS/editor noise
+*.log
+*.err
+*.out
+.DS_Store
